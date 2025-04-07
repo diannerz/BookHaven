@@ -1,0 +1,79 @@
+﻿<Window x:Class="BookHaven.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookHaven"
+        mc:Ignorable="d"
+        Title="BookHaven" Height="768" Width="1366"
+        Background="#1F1F1F"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <!-- Sidebar -->
+        <Grid Width="240" Background="#2A2A2A" HorizontalAlignment="Left">
+            <StackPanel Margin="20" VerticalAlignment="Top">
+                <TextBlock Text="BookHaven" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,10,0,30"/>
+                <Button Content="Home" Style="{StaticResource NavButtonStyle}" />
+                <Button Content="Add Book" Style="{StaticResource NavButtonStyle}" />
+                <Button Content="View Books" Style="{StaticResource NavButtonStyle}" />
+                <Button Content="Delete Book" Style="{StaticResource NavButtonStyle}" />
+            </StackPanel>
+
+        </Grid>
+
+        <!-- Top Bar -->
+        <DockPanel Margin="240,0,0,0" Height="60" VerticalAlignment="Top" Background="#333333">
+            <TextBox Width="300" Margin="20,10" Height="35" 
+                     HorizontalAlignment="Left" 
+                     VerticalAlignment="Center"
+                     Background="#444" Foreground="White" 
+                     BorderBrush="Transparent"
+                     FontSize="12"
+                     Padding="10" TextChanged="TextBox_TextChanged"
+                     Text="Searh here..."
+                     />
+            <Button Content="" Width="39" Height="40" HorizontalContentAlignment="Center" HorizontalAlignment="Left">
+                <Button.Background>
+                    <ImageBrush ImageSource="/5f2af29f96b4b534a3bc0e6510163d8e.jpg"/>
+                </Button.Background>
+            </Button>
+
+
+        </DockPanel>
+
+        <!-- Main Content Area -->
+        <ScrollViewer Margin="240,60,0,0" Background="#1F1F1F">
+            <WrapPanel Margin="20">
+                <!-- Placeholder for Book Cards -->
+                <Border Width="200" Height="300" Margin="10" Background="#333" CornerRadius="8">
+                    <StackPanel>
+                        <Rectangle Height="202" Margin="10" RadiusX="5" RadiusY="5">
+                            <Rectangle.Fill>
+                                <ImageBrush ImageSource="/yona.jpg" Stretch="UniformToFill"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock Text="Yona of the Dawn" FontSize="16" FontWeight="Bold" Foreground="White" Margin="10,10,10,0"/>
+                        <TextBlock Text="Author: Mizuno Kusanagi"  FontSize="12" Foreground="#CCCCCC" Margin="10,0,10,0"/>
+                        <TextBlock Text="Genre: Fantasy" FontSize="12" Foreground="#888" Margin="10,0,10,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="200" Height="300" Background="#333" CornerRadius="8">
+                    <StackPanel>
+                        <Rectangle Height="202" Margin="10" RadiusX="5" RadiusY="5">
+                            <Rectangle.Fill>
+                                <ImageBrush ImageSource="/aoharuride.jpg" Stretch="UniformToFill"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock Text="Our Spring Ride" FontSize="16" FontWeight="Bold" Foreground="White" Margin="10,10,10,0"/>
+                        <TextBlock Text="Author: Io Sakisaka" FontSize="12" Foreground="#CCCCCC" Margin="10,0,10,0"/>
+                        <TextBlock Text="Genre: Romance" FontSize="12" Foreground="#888" Margin="10,0,10,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Add more book cards dynamically later -->
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
